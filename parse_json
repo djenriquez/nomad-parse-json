@@ -1,0 +1,18 @@
+#!/usr/local/bin/python3
+import json
+import fileinput
+import os
+
+# Fetch the job file from STDIN
+job = ""
+with fileinput.input() as f_input:
+    for line in f_input:
+        job += line
+
+my_obj = { 
+    'Canonicalize': bool(os.getenv("CANONICALIZE", False)),
+    'JobHCL' : job
+}
+
+# print out the json equivalent
+print(json.dumps(my_obj))
