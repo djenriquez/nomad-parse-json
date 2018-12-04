@@ -5,6 +5,6 @@ To use:
 ```
 curl \
     --request POST \
-    --data "`docker run -i --rm -e CANONICALIZE=true djenriquez/nomad-parse-json:latest < demo/helloworld.nomad`" \
+    --data "`docker run -i --rm -e CANONICALIZE=true djenriquez/nomad-parse-json:latest < hello-world.nomad`" \
 http://localhost:4646/v1/jobs/parse
 ```
